@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    Function.prototype.myCall = function(context, ...args) {
+      if (!context) {
+        context = window
+      }
+      const fn = Symbol()
+      console.log(this)
+      context[fn] = this
+      const result = context[fn](...args)
+      delete context[fn]
+      return result
+    }
+    
+    const Vue = function(options) {
+      Object.keys(options.data).forEach(key => {
+        this[key] = options.data[key]
+      })
+      Object.keys(options.methods).forEach(key => {
+        this[key] = options.methods[key].bind(this)
+      })
+      options.created.myCall(this)
+    }
+    const el = new Vue({
+      data: {
+        name: 'hapi'
+      },
+      created() {
+        this.getName()
+      },
+      methods: {
+        getName() {
+          console.log(this.name)
+        }
+      }
+    })
+    const el2 = new Vue({
+      data: {
+        dog: 'shapi'
+      },
+      created() {
+        this.getDog()
+      },
+      methods: {
+        getDog() {
+          console.log(this.name)
+        }
+      }
+    })
+    console.log('el', el)
+    console.log('el2', el2)
+  </script>
+</body>
+</html>
