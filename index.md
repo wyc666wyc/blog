@@ -8,18 +8,18 @@ hero:
   tagline: cool ~~~~
   actions:
     - theme: brand
-      text: 开始刷题
+      text: 开始
       link: /interview/handWrite/call&apply&bind
     - theme: alt
-      text: 总结问题
+      text: 问题
       link: /issues/index
 
 features:
-  - title: 📝 记录日常开发问题
+  - title: 📝
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: 📚 高频面试题
+  - title: 📚 
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: 🚀 项目总结
+  - title: 🚀 
     details: 00864327.pngLorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 

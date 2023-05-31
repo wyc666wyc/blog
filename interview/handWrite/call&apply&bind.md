@@ -1,5 +1,7 @@
-# 手写call apply bind
+# call apply bind
+
 ## call ✔️
+
 ```js{4}
 Function.prototype.myCall = function(context, ...args) {
   if (!context) {
@@ -13,7 +15,9 @@ Function.prototype.myCall = function(context, ...args) {
 }
 
 ```
+
 ## apply ✔️
+
 ```js{4}
 Function.prototype.myApply = function(context, args) {
   if (!context) {
@@ -26,7 +30,9 @@ Function.prototype.myApply = function(context, args) {
   return result
 }
 ```
+
 ## bind
+
 ```js{4}
 Function.prototype.myBind = function(context, ...args) {
   if (!context) {
