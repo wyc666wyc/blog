@@ -31,6 +31,10 @@ export const sidebar = [
         // ✔️🤔
         items: [
           {
+            text: 'new 🤔',
+            link: '/interview/handWrite/new'
+          },
+          {
             text: 'call&apply&bind 🤔',
             link: '/interview/handWrite/call&apply&bind'
           },
