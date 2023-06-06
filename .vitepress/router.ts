@@ -28,10 +28,10 @@ export const sidebar = [
       {
         text: '手写题',
         collapsed: false,
-        // ✔️🤔
+        // ❌ ✔️🤔
         items: [
           {
-            text: 'new 🤔',
+            text: 'new ✔️',
             link: '/interview/handWrite/new'
           },
           {
@@ -62,7 +62,10 @@ export const sidebar = [
             text: 'promise',
             link: '/interview/handWrite/promise'
           },
-          
+          {
+            text: 'queryData',
+            link: '/interview/handWrite/queryData'
+          },
         ]
       },
       {

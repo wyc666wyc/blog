@@ -8,6 +8,12 @@
 </head>
 <body>
   <script>
+    Object.create({}, {
+      name: {
+        value: 'dog',
+        writable
+      }
+    })
     Function.prototype.myCall = function(context, ...args) {
       if (!context) {
         context = window

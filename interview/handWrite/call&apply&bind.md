@@ -42,9 +42,16 @@ Function.prototype.myBind = function(context, ...args) {
   context[fn] = this
   const _this = this
   const result = function(...innerArgs) {
-    if (_this instanceof this) {
-      
+    // 如果把bind返回的函数当做构造函数（new result()）使用
+    // 那么目标函数继承自绑定函数
+    if (this instanceof _this) {
+      this[fn] = _this
+      this[fn]([...args, ...innerArgs])
+    } else {
+      context[fn]([...args, ...innerArgs])
     }
   }
+  result.property = Object.create(this.prototype)
+  return result
 }
 ```
