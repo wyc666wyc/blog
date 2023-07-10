@@ -1,0 +1,36 @@
+.container {
+  overflow-y: scroll;
+  height: 200px;
+  border: 1px solid #333;
+  aspect-ratio: 1/1;
+  -webkit-box-reflect: below;
+}
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+.container::-webkit-scrollbar-track {
+  background-color: aquamarine;
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: blueviolet;
+  border-radius: 5px;
+}
+
+.content {
+  height: 1000px;
+}
+
+.t1 {
+  border: 1px solid #333;
+}
+.t1:first-child {
+  background-color: cadetblue;
+}
+
+.t2 {
+  background-color: aqua;
+}
+
+.t1.t2 {
+  color: aquamarine;
+}/*# sourceMappingURL=index.css.map */

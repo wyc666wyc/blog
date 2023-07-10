@@ -47,6 +47,10 @@ export const sidebar = [
             link: '/interview/handWrite/array'
           },
           {
+            text: 'currying',
+            link: '/interview/handWrite/currying'
+          },
+          {
             text: 'class',
             link: '/interview/handWrite/class'
           },
@@ -63,8 +67,46 @@ export const sidebar = [
             link: '/interview/handWrite/promise'
           },
           {
+            text: 'PromiseScheduler',
+            link: '/interview/handWrite/PromiseScheduler'
+          },
+          {
             text: 'queryData',
             link: '/interview/handWrite/queryData'
+          },
+          {
+            text: 'dfs&bfs',
+            link: '/interview/handWrite/dfs&bfs'
+          }
+        ]
+      },
+      {
+        text: '性能优化',
+        collapsed: false,
+        items: [
+          {
+            text: '网络优化',
+            link: '/interview/performance/network'
+          },
+          {
+            text: '资源优化',
+            link: '/interview/performance/source'
+          },
+          {
+            text: 'css优化',
+            link: '/interview/performance/css'
+          },
+          {
+            text: 'js代码优化',
+            link: '/interview/performance/js'
+          },
+          {
+            text: '构建优化',
+            link: '/interview/performance/build'
+          },
+          {
+            text: '框架优化',
+            link: '/interview/performance/framework'
           },
         ]
       },
@@ -126,6 +168,24 @@ export const sidebar = [
           },
         ],
       },
+      {
+        text: 'css',
+        collapsed: false,
+        items: [
+          {
+            text: '基本css',
+            link: '/interview/css/base'
+          },
+          {
+            text: 'css预处理器',
+            link: '/interview/css/preprocessor'
+          },
+          {
+            text: '原子化css',
+            link: '/interview/css/atom'
+          },
+        ]
+      }
     ]
   },
   {
