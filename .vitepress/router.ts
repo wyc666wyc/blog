@@ -115,6 +115,28 @@ export const sidebar = [
         collapsed: false,
         items: [
           {
+            text: 'base',
+            collapsed: false,
+            items: [
+              {
+                text: '基础api',
+                link: '/interview/classics/base/api'
+              },
+              {
+                text: '..',
+                link: '/interview/classics/base/fiber'
+              },
+              {
+                text: '..',
+                link: '/interview/classics/base/diff'
+              },
+              {
+                text: '..',
+                link: '/interview/classics/base/hooks'
+              },
+            ]
+          },
+          {
             text: 'network',
             link: '/interview/classics/network'
           },
