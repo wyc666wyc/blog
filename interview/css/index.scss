@@ -1,0 +1,26 @@
+
+@import './test.scss';
+
+.container {
+  overflow-y: scroll;
+  height: 200px;
+  border: 1px solid #333;
+  aspect-ratio: 1 / 1;
+  -webkit-box-reflect: below;
+  @include scroll;
+}
+.content {
+  height: 1000px;
+}
+.t1 {
+  border: 1px solid #333;
+  &:first-child {
+    background-color: cadetblue;
+  }
+}
+.t2 {
+  background-color: aqua;
+}
+.t1.t2 {
+  color: aquamarine;
+}

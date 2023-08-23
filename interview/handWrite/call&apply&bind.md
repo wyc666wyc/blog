@@ -51,7 +51,7 @@ Function.prototype.myBind = function(context, ...args) {
       context[fn]([...args, ...innerArgs])
     }
   }
-  result.property = Object.create(this.prototype)
+  result.prototype = Object.create(this.prototype)
   return result
 }
 ```
