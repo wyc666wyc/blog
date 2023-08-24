@@ -138,7 +138,25 @@ export const sidebar = [
           },
           {
             text: 'network',
-            link: '/interview/classics/network'
+            collapsed: false,
+            items: [
+              {
+                text: '大纲',
+                link: 'interview/classics/network/outline'
+              },
+              {
+                text: '..',
+                link: '/interview/classics/network/fiber'
+              },
+              {
+                text: '..',
+                link: '/interview/classics/network/diff'
+              },
+              {
+                text: '..',
+                link: '/interview/classics/network/hooks'
+              },
+            ],
           },
           {
             text: 'vue',
