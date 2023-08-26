@@ -4,9 +4,32 @@
 ```js{4}
 const bucket = new WeakMap()
 let activeEffect
-function effect(fn) {
-  activeEffect = fn
-  fn()
+const effectStacks = []
+function effect(fn, option) {
+  // activeEffect = fn
+  // fn()
+  const effectFn = () => {
+    cleanup(effectFn)
+    activeEffect = fn
+    effectStacks.push(activeEffect)
+    const res = fn()
+    effectStacks.pop()
+    activeEffect = effectStacks[effectStacks.length - 1]
+    return res
+  }
+  effect.deps = []
+  effect.option = option
+  if (!option?.lazy) {
+    effectFn()
+  }
+  return effectFn
+}
+function cleanup(effectFn) {
+  for(let i = 0; i < effectFn.deps.length; i++) {
+    const deps = effectFn.deps[i]
+    deps.delete(effectFn)
+  }
+  effectFn.deps.length = 0
 }
 function reactive(obj) {
   return new Proxy(obj, {
@@ -31,6 +54,7 @@ function track(target, key) {
     depsMap.set(key, deps = new Set())
   }
   deps.add(activeEffect)
+  activeEffect.deps.push(deps)
 }
 function trigger(target, key) {
   const depsMap = bucket.get(target)

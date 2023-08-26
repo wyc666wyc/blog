@@ -163,8 +163,12 @@ export const sidebar = [
             collapsed: false,
             items: [
               {
-                text: 'reactive响应式原理',
+                text: 'reactive响应式基本原理',
                 link: '/interview/classics/vue/reactive'
+              },
+              {
+                text: 'vue3 computed和watch实现原理',
+                link: '/interview/classics/vue/computed&watch'
               },
               {
                 text: 'visual dom 虚拟dom',
