@@ -40,3 +40,46 @@ const computed = (fn) => {
   return obj
 }
 ```
+
+# watch 原理
+```js{4}
+const watch = (source, cb, options) => {
+  let getter
+  if (typeof source === 'functuon') {
+    getter = source
+  } else {
+    getter = () => traverse(source)
+  }
+  let newValue, oldValue, cleanup
+  function onValidate(fn) {
+    cleanup = fn
+  }
+  const job = () => {
+    if (cleanup) {
+      cleanup()
+    }
+    newValue = effectFn()
+    cb(newValue, oldValue, onValidate)
+    oldValue = newValue
+  }
+  const effectFn = effect(() => getter, {
+    lazy: true,
+    scheduler() {
+      if (options?.flush === 'post') {
+        const p = Promise.resolve()
+        p.then(res => {
+          job()
+        })
+      } else {
+        job()
+      }
+    }
+  })
+  if (options?.immediate === true) {
+    job()
+  } else {
+    oldValue = effectFn()
+  }
+
+}
+```
