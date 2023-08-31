@@ -31,3 +31,21 @@ class RefImpl {
   }
 }
 ```
+
+## reactive
+```ts{4}
+
+function reavtive(obj) {
+  return new Proxy(obj, {
+    get(target, key, receiver) {
+
+    }
+    set(target, key, value, receiver) {
+
+    }
+    has
+    ownKeys
+    deleteProperty
+  })
+}
+```
